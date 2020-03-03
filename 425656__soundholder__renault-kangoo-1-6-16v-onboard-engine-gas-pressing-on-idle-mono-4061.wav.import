@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/425656__soundholder__renault-kangoo-1-6-16v-onboard-engine-gas-pressing-on-idle-mono-4061.wav-9e8034b866359adb4fa5caa8161e0c4f.sample"
+
+[deps]
+
+source_file="res://425656__soundholder__renault-kangoo-1-6-16v-onboard-engine-gas-pressing-on-idle-mono-4061.wav"
+dest_files=[ "res://.import/425656__soundholder__renault-kangoo-1-6-16v-onboard-engine-gas-pressing-on-idle-mono-4061.wav-9e8034b866359adb4fa5caa8161e0c4f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

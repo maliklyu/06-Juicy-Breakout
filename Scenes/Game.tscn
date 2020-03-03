@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Paddle.gd" type="Script" id=2]
@@ -6,6 +6,11 @@
 [ext_resource path="res://Scripts/Score.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Lives.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Starting.gd" type="Script" id=6]
+[ext_resource path="res://eye.png" type="Texture" id=7]
+[ext_resource path="res://mouth.png" type="Texture" id=8]
+[ext_resource path="res://pupil.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/Mouth.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/Pupli.gd" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 72, 16 )
@@ -13,12 +18,20 @@ extents = Vector2( 72, 16 )
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1023.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
 
 [node name="Paddle" type="KinematicBody2D" parent="."]
-position = Vector2( 544, 552 )
+position = Vector2( 511, 552 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -29,9 +42,43 @@ margin_left = -72.0
 margin_top = -16.0
 margin_right = 72.0
 margin_bottom = 16.0
+color = Color( 0.992157, 0.494118, 0.203922, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle"]
 shape = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="Paddle"]
+
+[node name="Left Eye" type="Sprite" parent="Paddle"]
+position = Vector2( -69, -1 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="Left Pupli" type="Sprite" parent="Paddle"]
+position = Vector2( -61, -10 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+script = ExtResource( 11 )
+
+[node name="Right Eye" type="Sprite" parent="Paddle"]
+position = Vector2( 72, 0 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="Right Pupil" type="Sprite" parent="Paddle"]
+position = Vector2( 75, -10 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+script = ExtResource( 11 )
+
+[node name="Mouth" type="Sprite" parent="Paddle"]
+position = Vector2( 0, 14 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 8 )
+script = ExtResource( 10 )
 
 [node name="Wall" type="StaticBody2D" parent="."]
 
@@ -225,4 +272,6 @@ script = ExtResource( 6 )
 
 [node name="Timer" type="Timer" parent="Starting"]
 wait_time = 10.0
+
+[node name="Comet" type="Node2D" parent="."]
 [connection signal="timeout" from="Starting/Timer" to="Starting" method="_on_Timer_timeout"]

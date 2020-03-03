@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/28525__parf__23288-progic35-resocoptermedium-looped.wav-7d7b759f213ba7aafb95d3c8b3c4adde.sample"
+
+[deps]
+
+source_file="res://28525__parf__23288-progic35-resocoptermedium-looped.wav"
+dest_files=[ "res://.import/28525__parf__23288-progic35-resocoptermedium-looped.wav-7d7b759f213ba7aafb95d3c8b3c4adde.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
