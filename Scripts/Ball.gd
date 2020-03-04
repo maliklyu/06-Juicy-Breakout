@@ -60,7 +60,7 @@ func _physics_process(delta):
 		if body.is_in_group("Tiles"):
 			Game.change_score(body.points)
 			add_color(1.0)
-			body.find_node("smoke").emitting = true
+			#body.find_node("smoke").emitting = true
 			body.kill()
 		add_trauma(2.0)
 	
